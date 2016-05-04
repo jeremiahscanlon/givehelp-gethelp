@@ -23,7 +23,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(express.static('./app/public'));
 
 // Routing 
-require('./app/routing/routes.js')(app);
+app.use(function(req, res){
+	res.sendFile(path.join(__dirname + '/../public/home.html'));
+});
 
 //Listener 
 app.listen(PORT, function() {
