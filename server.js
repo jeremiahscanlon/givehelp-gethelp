@@ -18,9 +18,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-// Routing 
-app.get('/',function(req, res){
-	res.sendFile(path.join(__dirname + './public/home.html'));
+// Routing
+// Load static files
+app.use(express.static(__dirname +'/public'));
+
+app.get('/getHelp',function(req, res){
+	res.sendFile(path.join(__dirname + '/public/createNeedHelp.html'));
+});
+
+app.get('/giveHelp',function(req, res){
+	res.sendFile(path.join(__dirname + '/public/createHelper.html'));
+});
+
+app.use(function(req, res){
+	res.sendFile(path.join(__dirname + '/public/home.html'));
 });
 
 app.get('/api/all/:table?', function(req, res){
