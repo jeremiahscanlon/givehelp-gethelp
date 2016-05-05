@@ -20,11 +20,11 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 
 // Load static files
-app.use(express.static('./app/public'));
+app.use(express.static('./public'));
 
 // Routing 
 app.use(function(req, res){
-	res.sendFile(path.join(__dirname + '/../public/home.html'));
+	res.sendFile(path.join(__dirname + '/public/createNeedHelp.html'));
 });
 
 //Listener 
