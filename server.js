@@ -18,14 +18,31 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-
-// Load static files
-app.use(express.static('./app/public'));
-
 // Routing 
-app.use(function(req, res){
-	res.sendFile(path.join(__dirname + '/../public/home.html'));
+app.get('/',function(req, res){
+	res.sendFile(path.join(__dirname + './public/home.html'));
 });
+
+app.get('/api/all/:table?', function(req, res){
+var data =  orm.selectAll(req.params.table, function(data){
+				console.log(data); });
+});
+
+
+app.post('/api/get-help', function(req, res){
+	var wantHelp = req.body;
+
+	orm.getHelp (wantHelp, function(data){
+	})
+});
+
+app.post('/api/give-help', function(req, res){
+	var helper = req.body;
+	
+	orm.giveHelp (helper, function(data){
+	})
+});
+
 
 //Listener 
 app.listen(PORT, function() {
