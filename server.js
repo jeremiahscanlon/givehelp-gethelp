@@ -22,15 +22,15 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 // Load static files
 app.use(express.static(__dirname +'/public'));
 
-app.get('/getHelp',function(req, res){
+app.get('/get-help',function(req, res){
 	res.sendFile(path.join(__dirname + '/public/createNeedHelp.html'));
 });
 
-app.get('/giveHelp',function(req, res){
+app.get('/give-help',function(req, res){
 	res.sendFile(path.join(__dirname + '/public/createHelper.html'));
 });
 
-app.use(function(req, res){
+app.get(function(req, res){
 	res.sendFile(path.join(__dirname + '/public/home.html'));
 });
 
@@ -41,8 +41,8 @@ var data =  orm.selectAll(req.params.table, function(data){
 
 
 app.post('/api/get-help', function(req, res){
+	console.log(req.body);
 	var wantHelp = req.body;
-
 	orm.getHelp (wantHelp, function(data){
 	})
 });

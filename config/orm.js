@@ -16,10 +16,12 @@ var orm = {
 		})
 	},
 	// add helpee (getHelp)
-	getHelp : function(name, phone, email, available, need_help){
-		var script = "INSERT INTO get_help (name, phone, email, available, need_help) VALUES(?, ?, ?, ?, ?)";
-		connection.query(script, [name, phone, email, available, need_help], function(err, result){
+	getHelp : function(wantHelp, callback){
+		var script = "INSERT INTO get_help (name, phone, email, available) VALUES(?, ?, ?, ?)";
+		connection.query(script, [wantHelp.name, wantHelp.phone, wantHelp.email, wantHelp.available], function(err, result){
 			callback(result);
+			console.log(wantHelp);
+			console.log(result);
 		})
 	}
 }
