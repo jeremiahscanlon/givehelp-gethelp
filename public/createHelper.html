@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="veiwport" content="width=device-width, initial-scale=1">
+	<title>GetHelp GiveHelp - Create New Helper</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/create.css">
+
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container">
+			<img src="/assets/images/logo.png" id="mainLogo">
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Give a Hand</h1>
+				<p>Fill in the following information to list your availability.</p>
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Lemme Get Yo' Digits</h2>
+				<form role="form">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" class="form-control" id="name" required>
+					</div>
+					<div class="form-group">
+						<label for="imageURL">Phone:</label>
+						<input type="text" class="form-control" id="phone" required>
+					</div>
+					<div class="form-group">
+						<label for="name">Email:</label>
+						<input type="text" class="form-control" id="email" required>
+					</div>
+					<div class="form-group">
+						<label for="imageURL">Available: (note: enter the days you are available separated by a comma)</label>
+						<input type="text" class="form-control" id="available" required>
+					</div>
+				</form>
+				<!-- <form action="">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Days
+						<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="">Monday</a></li>
+							<li><a href="">Tuesday</a></li>
+							<li><a href="">Wednesday</a></li>
+							<li><a href="">Thursday</a></li>
+							<li><a href="">Friday</a></li>
+							<li><a href="">Saturday</a></li>
+							<li><a href="">Sunday</a></li>
+						</ul>
+					</div>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Times
+						<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#">Morning (8am - 11:30am)</a></li>
+							<li><a href="#">Afternoon (12pm - 5:30pm)</a></li>
+							<li><a href="#">Evening (6pm - 10pm)</a></li>
+							<li><a href="#">Evening (6pm - 10pm)</a></li>
+						</ul>
+					</div>
+				</form> -->
+				<hr>
+			</div>
+		</div>
+		
+		<div class="buttonArea">
+			<button class="btn btn-info btn-block" id="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit your info and we'll see who needs help.</button>
+		</div>
+
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Your Top Friend...</h4>
+				</div>
+				<div class="modal-body">
+					<div id="modalBody"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript" src="assets/js/create.js"></script>
+</body>
+</html>
