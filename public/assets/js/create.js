@@ -24,7 +24,6 @@ $(document).ready (function(){
 			$( '#name' ).val('');
 			$( '#imageURL' ).val('');
 			$('.btn').removeClass('selcted');
-
 		});
 	};
 
@@ -50,7 +49,7 @@ $(document).ready (function(){
 					};
 					console.log(postObject);
 					// run the function to send to the api
-					// postToApi();
+					postToApi();
 
 				} else {
 
